@@ -1,0 +1,38 @@
+{
+  "name": "preamble",
+  "version": "0.0.0",
+  "description": "Preamble repo",
+  "main": "app.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://vyance@bitbucket.org/preamble/preamble.git"
+  },
+  "author": "Sean Ho",
+  "license": "ISC",
+  "dependencies": {
+    "apn": "^1.6.2",
+    "body-parser": "^1.8.2",
+    "dateformat": "^1.0.8",
+    "ejs": "^1.0.0",
+    "express": "^4.9.0",
+    "firebase": "^1.1.0",
+    "html": "0.0.7",
+    "htmlparser2": "^3.8.2",
+    "jsdom": "^1.3.1",
+    "mandrill-api": "^1.0.41",
+    "moment": "^2.8.3",
+    "mongoose": "^3.8.16",
+    "passport": "^0.2.1",
+    "postmark": "^0.2.6",
+    "request": "^2.48.0",
+    "rewire": "^2.1.0",
+    "should": "^4.0.4",
+    "sinon": "^1.10.3",
+    "supertest": "^0.13.0",
+    "twilio": "^1.7.0",
+    "xml2js": "^0.4.4"
+  }
+}

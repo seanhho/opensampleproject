@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= name_text %> &#183; Preamble</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link href="css/ratchet.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery.boxfit.js"></script>
+
+    <style>
+      @font-face {
+        font-family: HelveticaNeue-Light;
+        src: url("fonts/HelveticaNeueLTPro-Lt.otf") format("opentype");
+      }
+
+      @font-face {
+        font-family: HelveticaNeue-Thin;
+        src: url("fonts/HelveticaNeueLTPro-Th.otf") format("opentype");
+      }
+
+      a {
+        color: #8D47B3;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .content {
+        background-color: #3B2F63;
+        background-image: radial-gradient( at 50% top, rgba(84,90,182,0.6) 0%,rgba(84,90,182,0) 75%),radial-gradient( at right top, #794aa2 0%,rgba(121,74,162,0) 57%);
+        color: #c7c0de;
+        background-repeat: no-repeat;
+        color: #c7c0de;
+        margin: 0;
+        padding: 0;
+        line-height: 1.25;
+      }
+
+      #slide-container {
+        width: 1140px;
+        margin: 50px auto 0px auto;
+      }
+
+      .rounded-corners {
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+      }
+
+      #profile {
+        margin-top: 33px;
+        text-align: center;
+      }
+
+      #profile-picture {
+        width: 128px;
+        height: 128px;
+        object-fit: cover;
+        border-radius: 64px;
+        border-color: #8D47B3;
+        border-width: 1px;
+        border-style: solid;
+      }
+
+      .social-button {
+      	width: 56px;
+        height: 56px;
+        border-radius: 28px;
+        border-color: #5B2678;
+        border-width: 1px;
+        border-style: solid;
+        margin-bottom: 36px;
+        background-color: #9555B8;
+      }
+
+      .email {
+      	padding: 5px;
+      	margin-right: 4px;
+      }
+
+      .linkedin {
+      	padding: 6px;
+      	margin-left: 4px;
+      }
+
+      .borderless {
+      	border-width: 0px;
+      }
+
+      #name {
+        height: 76px;
+        font-size: 36px;
+        color: #5B2678;
+      }
+
+      #title {
+        height: 36px;
+        width: 300px;
+        padding: 0 15px;
+        color: #8D47B3;
+      }
+
+      #location {
+        height: 36px;
+        width: 300px;
+        padding: 0 15px;
+        color: #8D47B3;
+      }
+
+      #bio {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Open Sans", Helvetica, Arial, "Lucida Grande", sans-serif; 
+        font-weight: 400;
+        font-size: 18px;
+        height: 120px;
+        color: #000;
+      }
+
+      .table {
+        display:table;
+        width: 300px;
+        padding: 0 15px;
+      }
+
+      .center {
+        display: table-cell;
+        vertical-align:middle;
+        text-align: center;
+        white-space: normal;
+      }
+
+      .slide {
+       font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Open Sans", Helvetica, Arial, "Lucida Grande", sans-serif; 
+       font-weight: 300;
+               width: 300px;
+        height: 460px;
+        margin: 40px;
+        padding-top: 1px;
+        background-color: #fff;
+        float: left;
+        -webkit-box-shadow: 1px 1px 8px 0px rgba(0,0,0,0.5);
+        -moz-box-shadow: 1px 1px 8px 0px rgba(0,0,0,0.5);
+        box-shadow: 1px 1px 8px 0px rgba(0,0,0,0.5);
+      }
+
+      .small-image img {
+        float: left;
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 30px;
+        border-color: #8D47B3;
+        border-width: 1px;
+        border-style: solid;
+      }
+
+      .job {
+        margin-top: 22px;
+        height: 64px;
+        width: 300px;
+        padding: 0 15px;
+      }
+
+      .share-title {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Open Sans", Helvetica, Arial, "Lucida Grande", sans-serif; 
+        font-weight: 400;
+        height: 30px;
+        width: 202px;
+        float: left;
+        font-size: 21px;
+        color: #5B2678;
+        padding-left: 8px;
+        margin-top: 20px;  /*Can't center text so resorting to margin-top */
+      }
+
+      .job-title {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Open Sans", Helvetica, Arial, "Lucida Grande", sans-serif; 
+        font-weight: 400;
+        height: 30px;
+        width: 202px;
+        float: left;
+        font-size: 21px;
+        color: #5B2678;
+        padding-left: 8px;
+        margin-top: 4px; /* Can't center text so resorting to margin-top */
+      }
+
+      .job-location {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Open Sans", Helvetica, Arial, "Lucida Grande", sans-serif; 
+        font-weight: 400;
+        height: 30px;
+        width: 202px;
+        float: left;
+        font-size: 18px;
+        color: #8D47B3;
+        padding-left: 8px;
+      }
+
+      .left {
+        display: table-cell;
+        vertical-align:middle;
+        white-space: normal;
+        text-align: left;
+      }
+
+      #experience, #education {
+        margin-top: 36px;
+        padding: 0px 15px;
+        height: 42px;
+        font-size: 34px;
+        color: #5B2678;
+      }
+
+      #education {
+        margin-top: 26px;
+      }
+
+      #name-line-height {
+        line-height: 1.25;
+      }
+
+      .footer {
+        bottom: 0px;
+        text-align: center;
+      }
+
+      .footer img {
+        width: 40px;
+        height: 40px;
+        margin-top: 40px;
+      }
+
+      .footer p {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Open Sans", Helvetica, Arial, "Lucida Grande", sans-serif; 
+        font-weight: 400;
+        color: #8D47B3;
+      }
+
+      .footer a {
+        text-decoration: none;
+      }
+
+    </style>
+
+  </head>
+  <body>
+    <div class="content">
+      <div id="slide-container">
+          <div class="slide rounded-corners">
+            <div id="profile">
+            	<img id="profile-picture" src="<%= user_image %>">
+          	</div>
+            
+            <div id="name" class="table">
+              <div id="name-line-height" class="center">
+                <%= name_text  %>
+              </div>
+            </div>
+
+            <div id="title">
+              <%= current_job_text  %>
+            </div>
+
+            <div id="location">
+              <%= current_location_text %>
+            </div>
+
+            <div id="bio" class="table">
+              <div class="center">
+                <%= bio_text %>
+              </div>
+            </div>
+          </div>
+
+          <div class="slide rounded-corners">            
+            <div id="experience" class="table">
+              <div class="left">
+                Experience
+              </div>
+            </div>
+
+            <div class="job">
+              <div class="small-image"><img src="<%= job_image1 %>"></div>
+              <div class="job-title">
+                <%= job_text1 %>              
+              </div>
+              <div class="job-location">
+                <%= location_text1 %>
+              </div>
+            </div>
+
+            <div class="job" style="margin-top:26px;">
+              <div class="small-image"><img src="<%= job_image2 %>"></div>
+              <div class="job-title">
+                <%= job_text2 %>                
+              </div>
+              <div class="job-location">
+                <%= location_text2 %>
+              </div>
+            </div>
+
+            <div id="education" class="table">
+              <div class="left">
+                Education
+              </div>
+            </div>
+
+            <div class="job" style="margin-top:26px;">
+              <div class="small-image"><img src="<%= school_image %>"></div>
+              <div class="job-title">
+                <%= degree_text %>              
+              </div>
+              <div class="job-location">
+                <%= school_text %>
+              </div>
+            </div>
+          </div>
+
+          <div class="slide rounded-corners">            
+            <div id="experience" class="table">
+              <div class="left">
+                Contact
+              </div>
+            </div>
+
+            <% if (phoneNumber) { %>
+              <div class="job">
+                <div class="small-image"><a href="tel:+<%= phoneNumber %>"><img src="img/phone.png"></a></div>
+                <div class="share-title">
+                  <a href="tel:+<%= phoneNumber %>">1 (<%= phoneNumber.substring(1, 4) %>) <%= phoneNumber.substring(4, 7)%>-<%= phoneNumber.substring(7, 11) %></a>             
+                </div>
+              </div>
+            <% } %>
+
+            <% if (email) { %>
+              <div class="job">
+                <div class="small-image"><a href="mailto:<%= email %>"><img src="img/email.png"></a></div>
+                <div class="share-title">
+                  <a href="mailto:<%= email %>"><%= email %></a>           
+                </div>
+              </div>
+            <% } %>
+
+            <% if (linkedin) { %>
+              <div class="job">
+                <div class="small-image"><a href="<%= linkedin %>" target="_blank"><img src="img/linkedin.png"></a></div>
+                <div class="share-title">
+                  <a href="<%= linkedin %>" target="_blank">LinkedIn</a>           
+                </div>
+              </div>
+            <% } %>
+
+              <div class="footer">
+                <a href="http://preamble.im" target="_blank"><img src="img/preamble.png"></a>
+                <a href="http://preamble.im" target="_blank"><p>Connecting and following up made easy</p></a>
+              </div>
+          </div>
+        </div>
+    </div>
+  </body>
+
+  <script>
+    $(document).ready(function() {
+      $("#title").boxfit({maximum_font_size:26});
+      $("#location").boxfit({maximum_font_size:26});
+      $(".job-title").boxfit({align_center:false, maximum_font_size:21});
+      $(".job-location").boxfit({align_center:false, maximum_font_size:18});
+      $(".share-title").boxfit({align_center:false, maximum_font_size:21});
+    });
+  </script>
+</html>
