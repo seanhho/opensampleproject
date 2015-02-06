@@ -1,5 +1,6 @@
 # opensampleproject
-<h1>Backend for IOS application and webview. For mostly read purposes.</h1>
+<h2>Backend for IOS application and webview.</h2>
+<div>For mostly read purposes.</div>
 <div/>
 <div>Allows use to sign up with IOS device, and verify their number using sms.</div>
 <div/>
