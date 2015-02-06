@@ -1,5 +1,5 @@
 # opensampleproject
-<div>Backend for IOS application and webview. For mostly read purposes.</div>
+<h1>Backend for IOS application and webview. For mostly read purposes.</h1>
 <div/>
 <div>Allows use to sign up with IOS device, and verify their number using sms.</div>
 <div/>
@@ -13,11 +13,13 @@
 <li>Apn notifciations are currently disabled in open code.</li>
 <li>Code is designed to deploy on heroku with mongodb.</li>
 </ul>
-
 <div/>
 <div/>
 <div>Testing</div>
-'npm test' will run tests
+<ul>
+<li>'npm test' will run tests</li>
+</ul>
+
 <div/>
 <div>Notable files</div>
 <div>app/routes.js</div>
